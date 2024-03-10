@@ -149,7 +149,7 @@ corr <- ggplot(shape_df, aes(x = value, y = hispanic)) +
                   box.padding = 0.35, point.padding = 0.5) +
   labs(x = "Google Trends' relative search interest for 'Bad Bunny'",
        y = "Hispanic population share",
-       title = "Predicting hispanic population shares in the U.S. with Google Trends",
+       title = "Predicting Hispanic population shares in the U.S. with Google Trends",
        caption = "@pablogguz_ | Source: 2022 ACS and Google Trends") +
   theme_minimal() +
   theme(
@@ -173,7 +173,7 @@ corr <- ggplot(shape_df, aes(x = value_pesopluma, y = mexican)) +
                   box.padding = 0.35, point.padding = 0.5) +
   labs(x = "Google Trends' relative search interest for 'Peso Pluma'", 
        y = "Mexican population share",
-       title = "Predicting mexican population shares in the U.S. with Google Trends",
+       title = "Predicting Mexican population shares in the U.S. with Google Trends",
        caption = "@pablogguz_ | Source: 2022 ACS and Google Trends") +
   theme_minimal() +
   theme(
