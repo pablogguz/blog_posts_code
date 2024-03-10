@@ -98,8 +98,8 @@ map <- ggplot(data = shape_df) +
 
 map 
 
-ggsave(paste0(output, "map_badbunny.png"), map, height = 6, width = 8, dpi = 1200)
-ggsave(paste0(blog_path, "map_badbunny.png"), map, height = 6, width = 8, dpi = 1200)
+ggsave(paste0(output, "map_badbunny.png"), map, height = 6, width = 8, dpi = 200)
+ggsave(paste0(blog_path, "map_badbunny.png"), map, height = 6, width = 8, dpi = 200)
 
 # Load data on hispanic population shares ---- 
 hispanic <- read_dta(paste0(output, "/hispanic_shares.dta")) %>%
@@ -134,8 +134,8 @@ map <- ggplot(data = shape_df) +
  
 map
 
-ggsave(paste0(output, "map_hispanic.png"), map, height = 6, width = 8, dpi = 1200)
-ggsave(paste0(blog_path, "map_hispanic.png"), map, height = 6, width = 8, dpi = 1200)
+ggsave(paste0(output, "map_hispanic.png"), map, height = 6, width = 8, dpi = 200)
+ggsave(paste0(blog_path, "map_hispanic.png"), map, height = 6, width = 8, dpi = 200)
 
 # Plot correlations ----
 
@@ -149,10 +149,11 @@ corr <- ggplot(shape_df, aes(x = value, y = hispanic)) +
                   box.padding = 0.35, point.padding = 0.5) +
   labs(x = "Google Trends' relative search interest for 'Bad Bunny'",
        y = "Hispanic population share",
+       title = "Predicting hispanic population shares in the U.S. with Google Trends",
        caption = "@pablogguz_ | Source: 2022 ACS and Google Trends") +
   theme_minimal() +
   theme(
-    text = element_text(family = "Open Sans", size = 14),
+    text = element_text(family = "Open Sans", size = 12),
     plot.title = element_text(hjust = 0.5),
     plot.background = element_rect(fill = "#f2f2f2", color = NA),
     plot.caption = element_text(size = 8, hjust = 0, vjust = 0, colour = "#3C4043")
@@ -162,8 +163,8 @@ corr <- ggplot(shape_df, aes(x = value, y = hispanic)) +
 
 corr 
 
-ggsave(paste0(output, "corr_badbunny_hispanic.png"), corr, height = 6, width = 9, dpi = 1200)
-ggsave(paste0(blog_path, "corr_badbunny_hispanic.png"), corr, height = 6, width = 9, dpi = 1200)
+ggsave(paste0(output, "corr_badbunny_hispanic.png"), corr, height = 6, width = 9, dpi = 200)
+ggsave(paste0(blog_path, "corr_badbunny_hispanic.png"), corr, height = 6, width = 9, dpi = 200)
 
 corr <- ggplot(shape_df, aes(x = value_pesopluma, y = mexican)) + 
   geom_point(color = "#6487cc", size = 3) +  
@@ -172,10 +173,11 @@ corr <- ggplot(shape_df, aes(x = value_pesopluma, y = mexican)) +
                   box.padding = 0.35, point.padding = 0.5) +
   labs(x = "Google Trends' relative search interest for 'Peso Pluma'", 
        y = "Mexican population share",
+       title = "Predicting mexican population shares in the U.S. with Google Trends",
        caption = "@pablogguz_ | Source: 2022 ACS and Google Trends") +
   theme_minimal() +
   theme(
-    text = element_text(family = "Open Sans", size = 14),
+    text = element_text(family = "Open Sans", size = 12),
     plot.title = element_text(hjust = 0.5),
     plot.background = element_rect(fill = "#f2f2f2", color = NA),
     plot.caption = element_text(size = 8, hjust = 0, vjust = 0, colour = "#3C4043")
@@ -184,6 +186,6 @@ corr <- ggplot(shape_df, aes(x = value_pesopluma, y = mexican)) +
            label.y = 0.15, label.x = 75, size = 5, color = "#6487cc", family = "Open Sans")
 corr 
 
-ggsave(paste0(output, "corr_pesopluma_mexican.png"), corr, height = 6, width = 9, dpi = 1200)
-ggsave(paste0(blog_path, "corr_pesopluma_mexican.png"), corr, height = 6, width = 9, dpi = 1200)
+ggsave(paste0(output, "corr_pesopluma_mexican.png"), corr, height = 6, width = 9, dpi = 200)
+ggsave(paste0(blog_path, "corr_pesopluma_mexican.png"), corr, height = 6, width = 9, dpi = 200)
 
