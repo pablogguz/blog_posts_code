@@ -60,8 +60,7 @@ data_list <- map(
     ~ ardeco_get_dataset_data(
         variable = .x,
         version = 2021,
-        sector = "Total",
-        level = c(0, 2:4, 9)
+        level = '0,2,3,4,9'
     )
 )
 
@@ -70,6 +69,7 @@ data_list <- keep(data_list, is.data.frame)
 
 # Reshape each data frame and merge them
 reshaped_data_list <- map(data_list, function(df) {
+    colnames(df) <- tolower(colnames(df))
     variable_name <- unique(df$variable)
     df <- df %>%
         select(-variable) %>%
@@ -78,7 +78,7 @@ reshaped_data_list <- map(data_list, function(df) {
 })
 
 # Combine the reshaped data frames by merging on common columns
-final_data <- reduce(reshaped_data_list, full_join, by = c("sector", "version", "level", "nutscode", "year"))
+final_data <- reduce(reshaped_data_list, full_join, by = c("versions", "level", "nutscode", "year"))
 
 # Display the final combined dataset
 View(final_data)
